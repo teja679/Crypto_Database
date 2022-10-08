@@ -1,0 +1,11 @@
+.button-wrapper{
+    background-color: var(--blue);
+    font-weight: 600;
+    width: fir-content;
+    border-radius: 3rem;
+    padding: 0.75rem 2rem;
+}
+.button-wrapper p{
+    color: var(--white);
+    
+}

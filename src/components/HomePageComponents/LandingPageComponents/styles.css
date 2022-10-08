@@ -1,0 +1,36 @@
+.title{
+    /* margin: 3rem 0 0 3rem; */
+    margin: 3rem 0;
+    padding: 3rem;
+}
+h2{
+    font-size: 6rem;
+    margin: 0;
+    padding-top: 0;
+}
+h2 span{
+    color: var(--blue);
+}
+.title p{
+    margin-left: 10px;
+}
+.buttons{
+    display: flex;
+    margin-top: 50px;
+}
+.buttons .btn{
+    width: 130px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-right: 20px;
+    border-radius: 2rem;
+}
+.btn1{
+    color: var(--white);
+    background-color: var(--blue);
+}
+.btn2{
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    background-color: var(--black);
+}
