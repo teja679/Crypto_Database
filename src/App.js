@@ -1,11 +1,15 @@
 import './App.css';
+import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 // import Dashboard from './pages/Dashboard';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <Home />
+    <>
+      <Home />
+      <Dashboard />
+    </>
       // <Header />
     //   <BrowserRouter>
     //   <Routes>

@@ -30,7 +30,7 @@ const LandingPageComponent = () => {
             text: 'Chacekout my crypto tracker made using React!',
             url: "https://my-cryptotracker.com", title: "crypto Tracker"
           }}>
-            <OutlineButton text={'share'} />
+            <OutlineButton text={'Share'} />
           </RWebShare>
         </div>
       </div>
