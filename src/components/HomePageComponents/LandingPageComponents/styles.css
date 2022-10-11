@@ -1,14 +1,24 @@
+.main-page{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .title{
     /* margin: 3rem 0 0 3rem; */
     margin: 3rem 0;
     padding: 3rem;
 }
-h2{
+h1{
     font-size: 6rem;
     margin: 0;
     padding-top: 0;
 }
-h2 span{
+.stroke:hover{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: var(--black);
+}
+h2 .header-blue{
     color: var(--blue);
 }
 .title p{
@@ -33,4 +43,13 @@ h2 span{
     color: var(--blue);
     border: 2px solid var(--blue);
     background-color: var(--black);
+}
+.img-box{
+    position: relative;
+}
+.phone{
+    position: absolute;
+}
+.gradient{
+    position: absolute;
 }
