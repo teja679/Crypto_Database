@@ -5,6 +5,9 @@
   --white: #ffffff;
   --black: #111;
   --grey: #888;
+  --darkgrey: #1b1b1b;
+  --green: #61c96f;
+  --red: #f94141;
 }
 
 html {
@@ -72,4 +75,9 @@ p {
   p {
     font-size: 80%;
   }
+}
+
+td {
+  text-align: left !important;
+  width: 18%;
 }
