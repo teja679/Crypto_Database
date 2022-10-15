@@ -5,9 +5,11 @@
   justify-content: space-between;
   align-items: flex-start;
 }
-
+.heading-container{
+  margin-top: 3rem;
+}
 .big-heading {
-  font-size: 8rem;
+  font-size: 6.5rem;
   margin-bottom: 0px;
 }
 

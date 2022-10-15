@@ -5,11 +5,6 @@ import "./styles.css";
 // import Search from "../DashboardComponents/Search";
 
 function Header() {
-
-   const [search, setSearch] = useState()
-  const handleSearch = (prevState) => {
-    setSearch(prevState )
-  }
   return (
     <div className="navbar">
       <a href="/">
@@ -22,7 +17,7 @@ function Header() {
         <a href="/">
           <p className="links">Home</p>
         </a>
-        <a href="/dashboard" onClick={handleSearch}> 
+        <a href="/dashboard" > 
           <p className="links">Search</p>
         </a>
         <a href="/about-us">

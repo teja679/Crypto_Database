@@ -1,5 +1,5 @@
 .outline-button-wrapper {
-  background-color: var(--black);
+  background-color: var(--lightGold);
   border: 2px solid var(--blue);
   font-weight: 600;
   width: fit-content;
@@ -10,7 +10,7 @@
 }
 
 .outline-button-wrapper p {
-  color: var(--white);
+  color: var(--blue);
   font-weight: 600;
   margin: 0;
 }
@@ -19,8 +19,11 @@
   background-color: var(--blue);
   transition: all 0.3s;
   cursor: pointer;
+  color: var(--white);
 }
-
+.outline-button-wrapper p:hover{
+  color: var(--white);
+}
 @media only screen and (max-width: 800px) {
   .outline-button-wrapper p {
     font-size: 80%;
