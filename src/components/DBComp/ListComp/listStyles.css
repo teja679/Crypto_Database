@@ -24,7 +24,9 @@
 .td-volume-mobile {
     display: none;
 }
-
+.name{
+    margin-bottom: 1rem;
+}
 .chip {
     min-width: 7rem;
     text-align: center;
@@ -40,7 +42,12 @@
     .td-text {
         font-size: 80%;
     }
-
+    .image-td {
+        width: fit-content;
+        margin-right: 1.5rem;
+        margin-left: 1rem;
+    }
+    
     .td-icon {
         font-size: 2.4rem;
     }
@@ -57,13 +64,15 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .list-logo {
+     .list-logo {
         width: 30px !important;
       }
       .td-chip-flex {
         gap: 0.5rem;
       }
-    
+      .name{
+        margin-bottom: 0.2rem;
+      }
       .min {
         min-width: fit-content;
         padding: 0rem 1rem;
@@ -75,13 +84,13 @@
     
       .image-td {
         width: fit-content;
-        margin-right: 0rem;
+        margin-right: 1rem;
       }
       .td-chip-flex {
         margin-right: 0rem;
       }
       .td-text {
-        font-size: 65%;
+        font-size: 85%;
       }
       .td-chips {
         font-size: 50%;

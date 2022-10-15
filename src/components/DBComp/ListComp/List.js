@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './listStyles.css'
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 
 const List = ({ coin }) => {
+	const [volume, setVolume] = useState(coin.total_volume)
+
+	useEffect(() => {
+		if(volume){
+			if(volume >= 1000 && volume < 1000000){
+				setVolume(
+					volume.toString().slice(0, -3) + '.' + volume.toString().slice(-3, -1) + "K"
+				)
+			}
+			else if(volume >= 1000000 && volume < 1000000000){
+				setVolume(
+					volume.toString().slice(0, -6) + '.' + volume.toString().slice(-6, -4) + "M"
+				)
+			}
+			else if(volume >= 1000000000){
+				setVolume(
+					volume.toString().slice(0, -9) + '.' + volume.toString().slice(-9, -7) + "B"
+				)
+			}
+		}
+	}, [volume])
 	return (
 		<tr className='list-wrapper'>
 			<td className='image-td'>
@@ -52,7 +73,7 @@ const List = ({ coin }) => {
 			<td className='name2 td-text td-volume'>
 				${coin.total_volume.toLocaleString()}
 			</td>
-			{/* <td className='name2 td-text td-volume-mobile'>${volume}</td> */}
+			<td className='name2 td-text td-volume-mobile'>${volume}</td>
 			<td className="name2 td-text td-cap">
 				${coin.market_cap.toLocaleString()}
 			</td>

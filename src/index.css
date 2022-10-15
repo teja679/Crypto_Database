@@ -22,6 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* var(--black) == #111 */
   background-color: var(--black);
+  color: var(--white);
 }
 
 a {
