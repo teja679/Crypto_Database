@@ -19,10 +19,6 @@ function Dashboard() {
       coin.symbol.toLowerCase().includes(search.toLowerCase())
   );
 
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
-
   useEffect(() => {
     axios.get(API_URL, { crossDomain: true }).then((response) => {
       if (response.data) {
@@ -42,7 +38,7 @@ function Dashboard() {
       ) : (
         <>
           <Header />
-          <Search handleChange={handleChange} />
+          {/* <Search handleChange={handleChange} /> */}
           <DashboardWrapper data={filteredCoins} />
         </>
       )}

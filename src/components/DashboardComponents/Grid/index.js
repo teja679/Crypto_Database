@@ -6,11 +6,69 @@ import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 //todo:  graphs  + pagination + add this component to the home page
 
 function Grid({ coin }) {
+  const name = coin.price_change_percentage_24h > 0 ? 'green' : 'red'
   return (
-    <div className="coin-box">
+    <div className="coin-box" id={name}>
       <a href={`/coin?${coin.id}`}>
         <div className="logo-div">
-          <img src={coin.image} className="logo" />
+          <img src={coin.image} alt='coin' className="logo" />
+          <div className="coin-info">
+            <p className="symbol">{coin.symbol}-USD</p>
+            <p className="name">{coin.name}</p>
+          </div>
+        </div>
+        <div className="data-div">
+          {coin.price_change_percentage_24h > 0 ? (
+            <div className="chip-flex">
+              <div
+                className="chip"
+                style={{
+                  color: "var(--green)",
+                  borderColor: "var(--green)",
+                }}
+              >
+                {"+" + coin.price_change_percentage_24h.toFixed(2) + " %"}
+              </div>
+              <TrendingUpRoundedIcon
+                className="trending-icon"
+                fontSize="2.5rem"
+              />
+            </div>
+          ) : (
+            <div className="chip-flex">
+              <div className="chip red">
+                {coin.price_change_percentage_24h.toFixed(2) + " %"}
+              </div>
+              <TrendingDownRoundedIcon
+                className="trending-icon red"
+                fontSize="2.5rem"
+              />
+            </div>
+          )}
+          
+            <p className="price">${coin.current_price.toLocaleString()}</p>
+        
+          <p className="name">
+            <span className="sub-heading">Total Volume : </span>$
+            {coin.total_volume.toLocaleString()}
+          </p>
+          <p className="name">
+            <span className="sub-heading">Market Cap : </span> $
+            {coin.market_cap.toLocaleString()}
+          </p>
+        </div>
+      </a>
+    </div>
+  );
+}
+
+export default Grid;
+
+
+/*<div className="coin-box">
+      <a href={`/coin?${coin.id}`}>
+        <div className="logo-div">
+          <img src={coin.image} alt='coin' className="logo" />
           <div className="coin-info">
             <p className="symbol">{coin.symbol}-USD</p>
             <p className="name">{coin.name}</p>
@@ -61,8 +119,4 @@ function Grid({ coin }) {
           </p>
         </div>
       </a>
-    </div>
-  );
-}
-
-export default Grid;
+    </div>*/

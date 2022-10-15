@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;800&display=swap");
 
 :root {
-  --blue: #3a80e9;
+  --lightGold: #eee;
+  --blue: #3a79d6;
   --white: #ffffff;
   --black: #111;
   --grey: #888;
@@ -21,7 +22,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* var(--black) == #111 */
-  background-color: var(--black);
+  background-color: var(--lightGold);
 }
 
 a {
@@ -52,7 +53,7 @@ img {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--black);
+  background: var(--lightGold);
 }
 
 /* Handle */
@@ -68,7 +69,7 @@ h4,
 h5,
 h6,
 p {
-  color: var(--white);
+  color: var(--black);
 }
 
 td {
@@ -79,7 +80,7 @@ td {
 .coin-page-div {
   padding: 1rem;
   margin: 1rem 3rem;
-  background-color: var(--darkgrey);
+  background-color: var(--white);
   border-radius: 1rem;
 }
 
@@ -98,9 +99,9 @@ td {
 }
 
 .select-days {
-  color: var(--white) !important;
+  color: var(--black) !important;
   margin: 1rem;
-  border-color: var(--white) !important;
+  border-color: var(--black) !important;
 }
 
 @media only screen and (max-width: 800px) {

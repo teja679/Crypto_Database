@@ -1,9 +1,23 @@
 import Drawer from "./Drawer";
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button";
 import "./styles.css";
+// import Search from "../DashboardComponents/Search";
 
 function Header() {
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const [search, setSearch] = useState(true)
+  const handleSearch = () => {
+    console.log(search)
+    if(search)
+      setSearch(false)
+    else
+    setSearch(true)
+  }
   return (
     <div className="navbar">
       <a href="/">
@@ -11,11 +25,12 @@ function Header() {
           CryptoTracker<span style={{ color: "var(--blue)" }}>.</span>
         </h1>
       </a>
+      {/* {search && <Search handleChange={handleChange} onClick={handleSearch} />} */}
       <div className="links-flex">
         <a href="/">
           <p className="links">Home</p>
         </a>
-        <a href="/search">
+        <a href="/dashboard"> 
           <p className="links">Search</p>
         </a>
         <a href="/about-us">

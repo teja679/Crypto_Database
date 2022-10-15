@@ -36,8 +36,8 @@ function CoinPage() {
         borderWidth: 2,
         fill: false,
         tension: 0.25,
-        backgroundColor: "white",
-        borderColor: "white",
+        backgroundColor: "black",
+        borderColor: "black",
         pointRadius: 0,
       },
     ],
@@ -103,8 +103,8 @@ function CoinPage() {
           borderWidth: 2,
           fill: false,
           tension: 0.25,
-          backgroundColor: "white",
-          borderColor: "white",
+          backgroundColor: "black",
+          borderColor: "black",
           pointRadius: 0,
         },
       ],
@@ -155,8 +155,8 @@ function CoinPage() {
           borderWidth: 2,
           fill: false,
           tension: 0.25,
-          backgroundColor: "white",
-          borderColor: "white",
+          backgroundColor: "black",
+          borderColor: "black",
           pointRadius: 0,
         },
       ],
@@ -184,12 +184,12 @@ function CoinPage() {
                   className="select-days"
                   sx={{
                     height: "2.5rem",
-                    color: "var(--white)",
+                    color: "var(--black)",
                     "& .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "var(--white)",
+                      borderColor: "var(--black)",
                     },
                     "& .MuiSvgIcon-root": {
-                      color: "var(--white)",
+                      color: "var(--black)",
                     },
                   }}
                 >

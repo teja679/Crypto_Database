@@ -1,6 +1,6 @@
 .search-wrapper {
-  width: 100%;
-  padding: 1rem 3rem;
+  /* width: 100%; */
+  padding: 1rem ;
 }
 
 .search-input {
@@ -28,4 +28,10 @@
 
 .search-input input:focus {
   outline: none;
+}
+@media only screen and (max-width: 800px) {
+  .search-wrapper {
+    /* width: 100%; */
+    padding: 1rem 0;
+}
 }

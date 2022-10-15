@@ -10,7 +10,7 @@ export default function TemporaryDrawer() {
     <div>
       <div className="menu-button">
         <IconButton onClick={() => setOpen(true)}>
-          <MenuIcon style={{ color: "var(--white)" }} />
+          <MenuIcon style={{ color: "var(--black)" }} />
         </IconButton>
       </div>
       <Drawer anchor={"right"} open={open} onClose={() => setOpen(false)}>

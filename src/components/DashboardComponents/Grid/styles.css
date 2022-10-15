@@ -1,5 +1,5 @@
 .coin-box {
-  background-color: var(--darkgrey);
+  background-color: var(--white);
   width: 300px;
   height: 300px;
   border-radius: 1rem;
@@ -9,6 +9,14 @@
   flex-direction: column;
   padding: 2rem;
   cursor: pointer;
+}
+#green {
+  color: #0f0;
+  background-color: #cfc;
+}
+#red {
+  color: #f00;
+  background-color: rgb(255, 210, 210);
 }
 
 .logo-div {
@@ -39,12 +47,12 @@
 
 .chip {
   padding: 0.5rem 1rem;
-  border: 2px solid var(--green);
+  background-color: rgb(164, 255, 158);
+  /* border: 2px solid var(--green); */
   border-radius: 2rem;
   margin: 1.5rem 0rem;
   font-weight: 600;
 }
-
 .chip p {
   margin: 0;
 }
@@ -57,13 +65,20 @@
 }
 
 .trending-icon {
-  border: 2px solid var(--green);
+  background-color:  rgb(164, 255, 158);
+  color: #0f0;
+  /* border: 2px solid var(--green); */
   border-radius: 50%;
   padding: 0.35rem;
-  color: var(--green);
+  /* color: var(--green); */
   font-size: 2.5rem !important;
 }
-
+.red {
+  color: #f00;
+  background-color: rgb(255, 147, 147);
+  /* border: 2px solid var(--green); */
+ 
+}
 .chip:hover,
 .trending-icon:hover {
   background-color: var(--green);
@@ -71,10 +86,6 @@
   transition: all 0.3s;
 }
 
-.red {
-  color: var(--red);
-  border-color: var(--red);
-}
 
 .red:hover {
   background-color: var(--red);
@@ -86,7 +97,7 @@
 .price {
   font-weight: 600;
   font-size: 1.2rem;
-  color: var(--green);
+  color: var(--black);
   margin-top: 0;
 }
 
