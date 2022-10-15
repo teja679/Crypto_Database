@@ -1,12 +1,12 @@
-import React from 'react'
-import './styles.css'
+import React from "react";
+import "./styles.css";
 
-const Button = ({text, onClick}) => {
+function Button({ text, onClick }) {
   return (
-    <div className='button-wrapper' onClick={onClick}>
-        <p>{text}</p>
+    <div className="button-wrapper" onClick={onClick}>
+      <p>{text}</p>
     </div>
-  )
+  );
 }
 
-export default Button
+export default Button;
