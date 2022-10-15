@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/coin" element={<CoinPage />} />
-        {/* <Route path="/search" element={<Search />} /> */}
+        <Route path="/search" element={<Search />} />
       </Routes>
     </BrowserRouter>
   );
