@@ -1,22 +1,14 @@
 import Drawer from "./Drawer";
 import React, { useState } from "react";
-import Button from "../Button";
+import Button from "../Button/Button";
 import "./styles.css";
 // import Search from "../DashboardComponents/Search";
 
 function Header() {
 
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
-
-  const [search, setSearch] = useState(true)
-  const handleSearch = () => {
-    console.log(search)
-    if(search)
-      setSearch(false)
-    else
-    setSearch(true)
+   const [search, setSearch] = useState()
+  const handleSearch = (prevState) => {
+    setSearch(prevState )
   }
   return (
     <div className="navbar">
@@ -25,12 +17,12 @@ function Header() {
           CryptoTracker<span style={{ color: "var(--blue)" }}>.</span>
         </h1>
       </a>
-      {/* {search && <Search handleChange={handleChange} onClick={handleSearch} />} */}
+      {/* {search ? <Search handleChange={handleChange}  /> : <></>} */}
       <div className="links-flex">
         <a href="/">
           <p className="links">Home</p>
         </a>
-        <a href="/dashboard"> 
+        <a href="/dashboard" onClick={handleSearch}> 
           <p className="links">Search</p>
         </a>
         <a href="/about-us">

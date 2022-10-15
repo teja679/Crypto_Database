@@ -3,7 +3,7 @@ import "./styles.css";
 import iPhone from "../../../assets/iphone.png";
 import gradient from "../../../assets/gradient.png";
 import { motion } from "framer-motion";
-import Button from "../../Button";
+import Button from "../../Button/Button";
 import OutlinedButton from "../../OutlinedButton";
 import { RWebShare } from "react-web-share";
 

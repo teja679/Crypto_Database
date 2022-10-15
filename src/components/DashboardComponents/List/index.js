@@ -78,7 +78,7 @@ function List({ coin }) {
             ${coin.current_price.toLocaleString()}
           </td>
         ) : (
-          <td className="price price-red td-text" style={{ textAlign: "left" }}>
+          <td className="price  td-text" style={{ textAlign: "left" }}>
             ${coin.current_price.toLocaleString()}
           </td>
         )}

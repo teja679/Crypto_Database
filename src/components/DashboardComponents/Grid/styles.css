@@ -47,7 +47,9 @@
 
 .chip {
   padding: 0.5rem 1rem;
-  background-color: rgb(164, 255, 158);
+  
+  background-color:  rgb(164, 255, 158);
+  color: var(--white) !important;
   /* border: 2px solid var(--green); */
   border-radius: 2rem;
   margin: 1.5rem 0rem;
@@ -65,7 +67,7 @@
 }
 
 .trending-icon {
-  background-color:  rgb(164, 255, 158);
+  background-color:  rgb(167, 255, 161);
   color: #0f0;
   /* border: 2px solid var(--green); */
   border-radius: 50%;
