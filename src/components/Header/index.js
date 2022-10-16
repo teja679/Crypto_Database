@@ -2,6 +2,7 @@ import Drawer from "./Drawer";
 import React, { useState } from "react";
 import Button from "../Button/Button";
 import "./styles.css";
+import BlueBall from "../BlueBall/BlueBall";
 // import Search from "../DashboardComponents/Search";
 
 function Header() {
@@ -9,7 +10,9 @@ function Header() {
     <div className="navbar">
       <a href="/">
         <h1 className="heading">
-          CryptoTracker<span style={{ color: "var(--blue)" }}>.</span>
+          CryptoTracker
+          <BlueBall />
+          {/* <div style={{ color: "var(--blue)" }}>.</div> */}
         </h1>
       </a>
       {/* {search ? <Search handleChange={handleChange}  /> : <></>} */}
@@ -25,7 +28,7 @@ function Header() {
         </a>
         <a href="/dashboard">
           <p className="links">
-            <Button text="Dashboard" />
+            <Button text="Dashboard" className={'button'}  />
           </p>
         </a>
       </div>

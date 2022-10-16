@@ -27,7 +27,7 @@ function LandingComponent() {
         </p>
         <div className="button-div">
           <a href="/dashboard">
-            <Button text={"Dashboard"} />
+            <Button text={"Dashboard"} className={'button'}  />
           </a>
           <RWebShare
             data={{
@@ -37,18 +37,18 @@ function LandingComponent() {
             }}
             onClick={() => console.log("shared successfully!")}
           >
-            <OutlinedButton text={"Share"} />
+            <Button text={"Share"} className={'outline-button'} />
           </RWebShare>
         </div>
       </div>
 
       <div className="img-box">
-        <img className="gradient" src={gradient} />
+        <img className="gradient" alt='gradient' src={gradient} />
         <motion.img
           src={iPhone}
           className="phone"
-          initial={{ y: -10 }}
-          animate={{ y: 10 }}
+          initial={{ y: 0 , x: -10}}
+          animate={{ y: 50, x: 10  }}
           transition={{
             type: "smooth",
             repeatType: "mirror",
