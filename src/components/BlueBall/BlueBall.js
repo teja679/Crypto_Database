@@ -20,8 +20,8 @@ function BlueBall() {
   const logMousePosition = (e) => {
     console.log('Mouse event')
     if(e.clientY >= 80){
-        setY(e.clientY)
-        setX(e.clientX)
+        setY(e.clientY-10)
+        setX(e.clientX+10)
     }
     else{
         setX(280)
