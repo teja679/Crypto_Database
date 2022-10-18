@@ -10,7 +10,7 @@ function BlueBall() {
     height: '10px',
     borderRadius: '50%',
     position: 'absolute',
-    transition: 'all 0.4s',
+    transition: 'all 0.1s',
     // transform: 'translate(-50%, -50%)',
     // mixBlendMode: 'difference',
     left: `${x}px`,
@@ -18,7 +18,6 @@ function BlueBall() {
   }
 
   const logMousePosition = (e) => {
-    console.log('Mouse event')
     if(e.clientY >= 80){
         setY(e.clientY-10)
         setX(e.clientX+10)

@@ -1,4 +1,5 @@
 import axios from "axios";
+import './index.css'
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import OutlinedButton from "../components/OutlinedButton";
@@ -26,6 +27,7 @@ function CoinPage() {
         display: false,
       },
     },
+    defaultColors: [ '#00ccff', '#008800', '#ddaacc', /*Array of colors*/ ],
   };
 
   const [chartData, setChartData] = useState({
