@@ -1,0 +1,60 @@
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { COIN_GECKO_URL } from '../../../Contants'
+import SelectComponent from '../Select/Select';
+import SelectDays from '../../CoinPageComponents/SelectDays';
+
+const SelectCoins = ({
+    crypto1, crypto2, setCrypto1, setCrypto2, days, setDays
+}) => {
+    const API_URL = COIN_GECKO_URL +  "markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+    const [data, setData] = useState([])
+
+    const handleChange1 = (e) => {
+        setCrypto1(e.target.value)
+    }
+    const handleChange2 = (e) => {
+        setCrypto2(e.target.value)
+    }
+    const handleChange3 = (e) => {
+        setDays(e.target.value)
+    }
+    useEffect(() => {
+        axios.get(API_URL, {crossDomain: true}).then((res) => {
+            if(res.data){
+                console.log(res.data)
+                setData(res.data)
+            } else{
+                console.log('error')
+            }
+        })
+    }, [])
+
+  return (
+    <div className='select-flex'>
+        <div className='text-flex'>
+            <p>Crypto1</p>
+            <SelectComponent
+                value={crypto1}
+                handleChange={handleChange1}
+                data={data}
+                filter={crypto2}
+            />
+        </div>
+        <div className='text-flex'>
+            <p>Crypto2</p>
+            <SelectComponent
+                value={crypto2}
+                handleChange={handleChange2}
+                data={data}
+                filter={crypto1}
+            />
+        </div>
+        <div className='text-select inverse'>
+            <SelectDays days={days} handleChange={handleChange3} />
+        </div>
+    </div>
+  )
+}
+
+export default SelectCoins
