@@ -1,4 +1,5 @@
 import axios from 'axios'
+import './styles.css'
 import React, { useEffect, useState } from 'react'
 import { COIN_GECKO_URL } from '../../../Contants'
 import SelectComponent from '../Select/Select';
@@ -32,8 +33,8 @@ const SelectCoins = ({
 
   return (
     <div className='select-flex'>
-        <div className='text-flex'>
-            <p>Crypto1</p>
+        <div className='text-select'>
+            <p>Crypto 1</p>
             <SelectComponent
                 value={crypto1}
                 handleChange={handleChange1}
@@ -41,8 +42,8 @@ const SelectCoins = ({
                 filter={crypto2}
             />
         </div>
-        <div className='text-flex'>
-            <p>Crypto2</p>
+        <div className='text-select'>
+            <p>Crypto 2</p>
             <SelectComponent
                 value={crypto2}
                 handleChange={handleChange2}

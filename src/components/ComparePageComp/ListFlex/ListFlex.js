@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { getCoinData } from '../../../functions/getCoinData'
 import CoinPageList from '../../CoinPageComponents/CoinPageList'
 import Loader from './../../Loader/index'
+import CompareGraph from '../CompareGraph/CompareGraph'
+
 const ListFlex = ({ crypto1, crypto2, setCrypto1Desc, setCrypto2Desc }) => {
 
     const [coin1, setCoin1] = useState({})
