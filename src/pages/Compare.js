@@ -7,10 +7,10 @@ import Header from '../components/Header'
 
 const ComparePage = () => {
     const [crypto1, setCrypto1] = useState('bitcoin')
-    const [crypto2, setCrypto2] = useState('bitcoin')
-    const [days, setDays] = useState('bitcoin')
-    const [crypto1Desc, setCrypto1Desc] = useState('bitcoin')
-    const [crypto2Desc, setCrypto2Desc] = useState('bitcoin')
+    const [crypto2, setCrypto2] = useState('ethereum')
+    const [days, setDays] = useState(30)
+    const [crypto1Desc, setCrypto1Desc] = useState('')
+    const [crypto2Desc, setCrypto2Desc] = useState('')
   return (
     <>
       <Header />  

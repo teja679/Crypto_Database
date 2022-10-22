@@ -3,7 +3,6 @@ import axios from "axios";
 import Header from "../components/Header";
 import Loader from "../components/Loader";
 import DashboardWrapper from "../components/DashboardComponents/DashboardWrapper";
-import Search from "../components/DashboardComponents/Search";
 
 function Dashboard() {
   const API_URL =
@@ -42,8 +41,7 @@ function Dashboard() {
       ) : (
         <>
           <Header />
-          <Search handleChange={handleChange} />
-          <DashboardWrapper data={filteredCoins} />
+          <DashboardWrapper data={filteredCoins} searchHandler={handleChange} />
         </>
       )}
     </>

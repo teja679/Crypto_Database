@@ -26,7 +26,7 @@ const CompareGraph = ({ crypto1, crypto2, days }) => {
         plugins: {
           title: {
             display: true,
-            text: `Comparison betweeen ${crypto1} and ${crypto2}`,
+            text: `Comparison between ${crypto1} and ${crypto2}`,
           },
         },
         scales: {

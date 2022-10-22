@@ -5,8 +5,29 @@
   width: 100%;
   gap: 1rem;
   color: var(-white);
+  background-color: var(--white);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-radius: 1rem;
 }
-
+.list-wrapper-red {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  color: var(-white);
+  background-color: var(--white);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-radius: 1rem;
+}
+.list-wrapper:hover {
+  background-color: #0f0;
+}
+.list-wrapper-red:hover{
+  background-color: #f00;
+}
 .list-logo {
   max-width: 50px;
 }

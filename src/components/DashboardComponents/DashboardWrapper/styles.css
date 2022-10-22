@@ -1,10 +1,9 @@
 .tabs-wrapper {
-  width: 100vw;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
-
+.tabs-div{
+  margin: 0 10%;
+}
 .grid-flex {
   display: flex;
   width: 100%;

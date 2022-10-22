@@ -35,9 +35,9 @@ function List({ coin }) {
 
   return (
     <a href={`/coin?${coin.id}`}>
-      <tr className="list-wrapper">
+      <tr className={`${coin.price_change_percentage_24h > 0 ? 'list-wrapper' : 'list-wrapper-red'}`}  >
         <td className="image-td">
-          <img src={coin.image} className="list-logo" />
+          <img src={coin.image} alt='coin' className="list-logo" />
         </td>
 
         <td className="coin-info ">

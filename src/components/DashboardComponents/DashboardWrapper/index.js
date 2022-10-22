@@ -7,8 +7,9 @@ import TabContext from "@mui/lab/TabContext";
 import Grid from "../Grid";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import List from "../List";
-function DashboardWrapper({ data }) {
-  const [value, setValue] = React.useState(0);
+import Search from "../Search";
+function DashboardWrapper({ data , searchHandler }) {
+  const [value, setValue] = React.useState(1);
 
   const style = {
     color: "black",
@@ -33,19 +34,20 @@ function DashboardWrapper({ data }) {
   });
 
   return (
-    <div className="tabs-wrapper">
+          <div className="tabs-wrapper">
       <ThemeProvider theme={theme}>
         <TabContext value={value}>
-          <TabList
+          <TabList className='tabs-div' 
             variant="fullWidth"
             value={value}
             onChange={handleChange}
             textColor="primary"
           >
+          <Search handleChange={searchHandler} />
             <Tab label="Grid" sx={style} />
             <Tab label="List" sx={style} />
           </TabList>
-          <TabPanel value={0}>
+          <TabPanel value={1}>
             <div className="grid-flex">
               {data.length == 0 ? (
                 <p>No Crypto Currencies Found</p>
@@ -54,7 +56,7 @@ function DashboardWrapper({ data }) {
               )}
             </div>
           </TabPanel>
-          <TabPanel value={1}>
+          <TabPanel value={2}>
             <table className="list-table">
               {data.length == 0 ? (
                 <p>No Crypto Currencies Found</p>
@@ -65,7 +67,7 @@ function DashboardWrapper({ data }) {
           </TabPanel>
         </TabContext>
       </ThemeProvider>
-    </div>
+    </div>   
   );
 }
 
