@@ -6,9 +6,8 @@ import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 //todo:  graphs  + pagination + add this component to the home page
 
 function Grid({ coin }) {
-  const name = coin.price_change_percentage_24h > 0 ? 'green' : 'red'
   return (
-    <div className="coin-box" id={name}>
+    <div className={`${coin.price_change_percentage_24h > 0 ? 'coin-box' : 'coin-box-red'}`}>
       <a href={`/coin?${coin.id}`}>
         <div className="logo-div">
           <img src={coin.image} alt='coin' className="logo" />

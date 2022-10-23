@@ -17,7 +17,6 @@ function List({ coin }) {
         <td className="image-td">
           <img src={coin.image} alt='coin' className="list-logo" />
         </td>
-
         <td className="coin-info ">
           <p className="symbol td-text">{coin.symbol}-USD</p>
           <p className="name td-text" style={{ marginBottom: 0 }}>

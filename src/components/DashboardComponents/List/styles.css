@@ -9,6 +9,8 @@
   margin-bottom: 1rem;
   padding-left: 1rem;
   border-radius: 1rem;
+  color: #0f0;
+  background-color: #cfc;
 }
 .list-wrapper-red {
   display: flex;
@@ -19,14 +21,20 @@
   color: var(-white);
   background-color: var(--white);
   margin-bottom: 1rem;
-  padding-left: 1rem;
+  padding: 0 1rem;
   border-radius: 1rem;
+  color: #f00;
+  background-color: rgb(255, 210, 210);
 }
 .list-wrapper:hover {
-  background-color: #0f0;
+  box-shadow: 5px 5px 1px #aaa;
+  transform: scale(1.025);
+  /* background-color: #0f0; */
 }
 .list-wrapper-red:hover{
-  background-color: #f00;
+  box-shadow: 5px 5px 1px #aaa;
+  transform: scale(1.025);
+  /* background-color: #f00; */
 }
 .list-logo {
   max-width: 50px;
