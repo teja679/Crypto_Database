@@ -2,20 +2,18 @@ import axios from "axios";
 import './index.css'
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import OutlinedButton from "../components/OutlinedButton";
 import LineChart from "../components/DashboardComponents/LineChart";
 import Header from "../components/Header";
 import Loader from "../components/Loader";
 import List from "../components/DashboardComponents/List";
 
 import SelectDays from "../components/CoinPageComponents/SelectDays";
-import ColorToggleButton from "../components/CoinPageComponents/Toggle";
+import ColorToggleButton from '../components/CoinPageComponents/ColorToggleButton'
 import { convertNumbers } from "../functions/ConvertNumbers";
 
 function CoinPage() {
   const [searchParams] = useSearchParams();
   // console.log(searchParams);
-
   const [data, setData] = useState();
   const [dates, setDates] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,7 +21,7 @@ function CoinPage() {
   const [coin, setCoin] = useState({});
   const [days, setDays] = useState(30);
   const [type, setType] = useState("prices")
-
+  
   const options = {
     plugins: {
       legend: {
@@ -40,17 +38,17 @@ function CoinPage() {
         ticks:
           type == "market_caps"
             ? {
-                callback: function (value) {
-                  return "$" + convertNumbers(value);
-                },
-              }
+              callback: function (value) {
+                return "$" + convertNumbers(value);
+              },
+            }
             : type == "total_volumes"
-            ? {
+              ? {
                 callback: function (value) {
                   return convertNumbers(value);
                 },
               }
-            : {
+              : {
                 callback: function (value, index, ticks) {
                   return "$" + value.toLocaleString();
                 },
@@ -193,7 +191,7 @@ function CoinPage() {
       ],
     });
   };
-
+// console.log( type, setType, days)
   return (
     <>
       {loading && loadingChart ? (
@@ -207,13 +205,13 @@ function CoinPage() {
           <div className="coin-page-div">
             <p>
               Price Change in the last
-              <SelectDays value={days} onChange={handleChange} />
+              <SelectDays days={days} onChange={handleChange} />
             </p>
             <div className="toggle-flex">
-              {/* <ColorToggleButton 
-                type={type} setType={setType} days={days} id={data.id}
-                chartData={chartData} setChartData={setChartData}
-              /> */}
+              <ColorToggleButton
+                type={type} setType={setType} days={days}
+                chartData={chartData} setChartData={setChartData}  id={data.id} 
+              />
             </div>
             <LineChart chartData={chartData} options={options} />
           </div>

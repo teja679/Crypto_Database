@@ -1,11 +1,11 @@
 import { MenuItem, Select } from '@mui/material'
 import React from 'react'
 
-const SelectDays = ({value, handleChange}) => {
-  console.log('days>>>>', value)
+const SelectDays = ({days, handleChange}) => {
+  // console.log('days>>>>', days)
   return (
     <Select
-        value={value}
+        value={days}
         onChange={handleChange}
         className='select-days'
         sx={{

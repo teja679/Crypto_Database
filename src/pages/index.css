@@ -5,6 +5,13 @@
   background-color: var(--white);
   border-radius: 1rem;
 }
+.coin-page-div p {
+    margin: 0;
+    padding: 0;
+}
+.toggle-flex {
+  display: flex;
+}
 .line-page{
   margin: 1rem 3rem;
 }
