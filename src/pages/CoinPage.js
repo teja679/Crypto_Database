@@ -7,13 +7,14 @@ import LineChart from "../components/DashboardComponents/LineChart";
 import Header from "../components/Header";
 import Loader from "../components/Loader";
 import List from "../components/DashboardComponents/List";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
+
 import SelectDays from "../components/CoinPageComponents/SelectDays";
+import ColorToggleButton from "../components/CoinPageComponents/Toggle";
+import { convertNumbers } from "../functions/ConvertNumbers";
 
 function CoinPage() {
   const [searchParams] = useSearchParams();
-  console.log(searchParams);
+  // console.log(searchParams);
 
   const [data, setData] = useState();
   const [dates, setDates] = useState([]);
@@ -108,7 +109,7 @@ function CoinPage() {
     }
     setData(response_data.data);
 
-    console.log("ersponse data>>>", response_data.data);
+    // console.log("ersponse data>>>", response_data.data);
 
     const API_URL2 = `https://api.coingecko.com/api/v3/coins/${response_data.data.id}/market_chart?vs_currency=usd&days=${days}&interval=daily`;
 
@@ -200,7 +201,7 @@ function CoinPage() {
       ) : (
         <>
           <Header />
-          <div className="coin-page-div">
+          <div className="line-page">
             <List coin={coin} />
           </div>
           <div className="coin-page-div">
@@ -209,10 +210,10 @@ function CoinPage() {
               <SelectDays value={days} onChange={handleChange} />
             </p>
             <div className="toggle-flex">
-              <ColorToggleButton 
+              {/* <ColorToggleButton 
                 type={type} setType={setType} days={days} id={data.id}
                 chartData={chartData} setChartData={setChartData}
-              />
+              /> */}
             </div>
             <LineChart chartData={chartData} options={options} />
           </div>

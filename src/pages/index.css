@@ -5,7 +5,9 @@
   background-color: var(--white);
   border-radius: 1rem;
 }
-
+.line-page{
+  margin: 1rem 3rem;
+}
 .description a {
   text-decoration: underline;
 }
@@ -35,7 +37,10 @@
     margin: 0.8rem 1.5rem;
     border-radius: 0.8rem;
   }
-
+  
+  .line-page{
+    margin: 0.8rem 1.5rem;
+  }
   .description h2 {
     margin-top: 0;
     margin-bottom: 0.8rem;
