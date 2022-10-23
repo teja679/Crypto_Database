@@ -9,6 +9,7 @@ import Loader from "../components/Loader";
 import List from "../components/DashboardComponents/List";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import SelectDays from "../components/CoinPageComponents/SelectDays";
 
 function CoinPage() {
   const [searchParams] = useSearchParams();
@@ -20,6 +21,7 @@ function CoinPage() {
   const [loadingChart, setLoadingChart] = useState(true);
   const [coin, setCoin] = useState({});
   const [days, setDays] = useState(30);
+  const [type, setType] = useState("prices")
 
   const options = {
     plugins: {
@@ -27,7 +29,33 @@ function CoinPage() {
         display: false,
       },
     },
-    defaultColors: [ '#00ccff', '#008800', '#ddaacc', /*Array of colors*/ ],
+    responsive: true,
+    interaction: {
+      mode: "index",
+      intersect: false,
+    },
+    scales: {
+      y: {
+        ticks:
+          type == "market_caps"
+            ? {
+                callback: function (value) {
+                  return "$" + convertNumbers(value);
+                },
+              }
+            : type == "total_volumes"
+            ? {
+                callback: function (value) {
+                  return convertNumbers(value);
+                },
+              }
+            : {
+                callback: function (value, index, ticks) {
+                  return "$" + value.toLocaleString();
+                },
+              },
+      },
+    },
   };
 
   const [chartData, setChartData] = useState({
@@ -178,31 +206,14 @@ function CoinPage() {
           <div className="coin-page-div">
             <p>
               Price Change in the last
-              <span>
-                <Select
-                  value={days}
-                  label="Days"
-                  onChange={handleChange}
-                  className="select-days"
-                  sx={{
-                    height: "2.5rem",
-                    color: "var(--black)",
-                    "& .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "var(--black)",
-                    },
-                    "& .MuiSvgIcon-root": {
-                      color: "var(--black)",
-                    },
-                  }}
-                >
-                  <MenuItem value={7}>7</MenuItem>
-                  <MenuItem value={30}>30</MenuItem>
-                  <MenuItem value={60}>60</MenuItem>
-                  <MenuItem value={90}>90</MenuItem>
-                </Select>
-              </span>
-              days
+              <SelectDays value={days} onChange={handleChange} />
             </p>
+            <div className="toggle-flex">
+              <ColorToggleButton 
+                type={type} setType={setType} days={days} id={data.id}
+                chartData={chartData} setChartData={setChartData}
+              />
+            </div>
             <LineChart chartData={chartData} options={options} />
           </div>
           <div className="coin-page-div description">
