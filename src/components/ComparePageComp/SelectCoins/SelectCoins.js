@@ -23,7 +23,7 @@ const SelectCoins = ({
     useEffect(() => {
         axios.get(API_URL, {crossDomain: true}).then((res) => {
             if(res.data){
-                console.log(res.data)
+                // console.log(res.data)
                 setData(res.data)
             } else{
                 console.log('error')
@@ -52,7 +52,7 @@ const SelectCoins = ({
             />
         </div>
         <div className='text-select inverse'>
-            <SelectDays days={days} handleChange={handleChange3} />
+            <SelectDays value={days} handleChange={handleChange3} />
         </div>
     </div>
   )

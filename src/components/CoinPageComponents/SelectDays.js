@@ -12,10 +12,10 @@ const SelectDays = ({value, handleChange}) => {
             height: '2.5rem',
             color: "var(--white)",
             "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: "var(--white)",
+              borderColor: "var(--grey)",
             },
             "& .MuiSvgIcon-root": {
-              color: "var(--white)",
+              color: "var(--grey)",
             },
             "&:hover": {
               "&& fieldset": {
