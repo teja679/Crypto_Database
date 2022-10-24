@@ -3,9 +3,10 @@ import "./styles.css";
 import iPhone from "../../../assets/iphone.png";
 import gradient from "../../../assets/gradient.png";
 import { motion } from "framer-motion";
-import Button from "../../Button/Button";
+import Button from "../../Button";
 import OutlinedButton from "../../OutlinedButton";
 import { RWebShare } from "react-web-share";
+import { APP_URL } from "../../../constants";
 
 function LandingComponent() {
   return (
@@ -27,28 +28,28 @@ function LandingComponent() {
         </p>
         <div className="button-div">
           <a href="/dashboard">
-            <Button text={"Dashboard"} className={'button'}  />
+            <Button text={"Dashboard"} />
           </a>
           <RWebShare
             data={{
               text: "Checkout my crypto tracker made using React!",
-              url: "https://my-cryptotracker.com",
+              url: APP_URL,
               title: "Crypto Tracker",
             }}
             onClick={() => console.log("shared successfully!")}
           >
-            <Button text={"Share"} className={'outline-button'} />
+            <OutlinedButton text={"Share"} />
           </RWebShare>
         </div>
       </div>
 
       <div className="img-box">
-        <img className="gradient" alt='gradient' src={gradient} />
+        <img className="gradient" src={gradient} />
         <motion.img
           src={iPhone}
           className="phone"
-          initial={{ y: 0 , x: -10}}
-          animate={{ y: 50, x: 10  }}
+          initial={{ y: -10 }}
+          animate={{ y: 10 }}
           transition={{
             type: "smooth",
             repeatType: "mirror",

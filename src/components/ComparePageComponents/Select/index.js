@@ -1,17 +1,17 @@
-import { Select } from '@mui/material'
-import React from 'react'
-import { MenuItem } from '@mui/material'
-
-const SelectComponent = ({ value, handleChange, data, filter }) => {
+import React from "react";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import "./styles.css";
+function SelectComponent({ value, handleChange, data, filter }) {
   return (
     <div>
       <Select
-        value={value ?? 'crypto'}
+        value={value ?? "crypto"}
         onChange={handleChange}
-        className='select-days'
+        className="select-days"
         sx={{
-          height: '2.5em',
-          color: 'var(--white',
+          height: "2.5rem",
+          color: "var(--white)",
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor: "var(--white)",
           },
@@ -25,7 +25,8 @@ const SelectComponent = ({ value, handleChange, data, filter }) => {
           },
         }}
       >
-        {data.filter((coin) => coin.id != filter)
+        {data
+          .filter((coin) => coin.id != filter)
           .map((item, i) => (
             <MenuItem key={i} value={item.id}>
               {item.name}
@@ -33,7 +34,7 @@ const SelectComponent = ({ value, handleChange, data, filter }) => {
           ))}
       </Select>
     </div>
-  )
+  );
 }
 
-export default SelectComponent
+export default SelectComponent;

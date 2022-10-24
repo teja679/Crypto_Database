@@ -1,5 +1,5 @@
 .coin-box {
-  background-color: var(--white);
+  background-color: var(--darkgrey);
   width: 300px;
   height: 300px;
   border-radius: 1rem;
@@ -9,33 +9,33 @@
   flex-direction: column;
   padding: 2rem;
   cursor: pointer;
-  color: #0f0;
-  background-color: #cfc;
 }
-.coin-box-red {
-  background-color: var(--white);
-  width: 300px;
-  height: 300px;
-  border-radius: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 2rem;
-  cursor: pointer;
-  color: #f00;
-  background-color: rgb(255, 210, 210);
-}
+
 .coin-box:hover {
-  box-shadow: 5px 5px 1px #aaa;
-  transform: scale(1.025);
-  /* background-color: #0f0; */
+  border: 2px solid var(--green) !important;
+  transform: scale(1.02) !important;
+  transition: all 0.3s;
 }
-.coin-box-red:hover{
-  box-shadow: 5px 5px 1px #aaa;
-  transform: scale(1.025);
-  /* background-color: #f00; */
+
+.box-red {
+  background-color: var(--darkgrey);
+  width: 300px;
+  height: 300px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+  cursor: pointer;
 }
+
+.box-red:hover {
+  transform: scale(1.02) !important;
+  border: 2px solid var(--red);
+  transition: all 0.3s;
+}
+
 .logo-div {
   display: flex;
   width: 100%;
@@ -64,14 +64,12 @@
 
 .chip {
   padding: 0.5rem 1rem;
-  
-  background-color:  rgb(164, 255, 158);
-  color: var(--white) !important;
-  /* border: 2px solid var(--green); */
+  border: 2px solid var(--green);
   border-radius: 2rem;
   margin: 1.5rem 0rem;
   font-weight: 600;
 }
+
 .chip p {
   margin: 0;
 }
@@ -84,20 +82,13 @@
 }
 
 .trending-icon {
-  background-color:  rgb(167, 255, 161);
-  color: #0f0;
-  /* border: 2px solid var(--green); */
+  border: 2px solid var(--green);
   border-radius: 50%;
   padding: 0.35rem;
-  /* color: var(--green); */
+  color: var(--green);
   font-size: 2.5rem !important;
 }
-.red {
-  color: #f00;
-  background-color: rgb(255, 147, 147);
-  /* border: 2px solid var(--green); */
- 
-}
+
 .chip:hover,
 .trending-icon:hover {
   background-color: var(--green);
@@ -105,6 +96,10 @@
   transition: all 0.3s;
 }
 
+.red {
+  color: var(--red);
+  border-color: var(--red);
+}
 
 .red:hover {
   background-color: var(--red);
@@ -116,7 +111,7 @@
 .price {
   font-weight: 600;
   font-size: 1.2rem;
-  color: var(--black);
+  color: var(--green);
   margin-top: 0;
 }
 
@@ -129,7 +124,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .coin-box {
+  .coin-box,
+  .box-red {
     width: 100%;
     align-items: center;
   }

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import ToggleButton from '@mui/material/ToggleButton'
-import ToggleButtonGroup from '@mui/material/ToggleButton'
-import { getPriorDate } from '../../functions/getPriorDate'
-import { getDaysArray } from '../../functions/getDaysArray'
-import { getPrices } from '../../functions/getPrices'
-import './styles.css'
+import * as React from "react";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { getPrices } from "../../../functions/getPrices";
+import { getPriorDate } from "../../../functions/getPriorDate";
+import { getDaysArray } from "../../../functions/getDaysArray";
 
 export default function ColorToggleButton({
   type,
@@ -20,7 +19,6 @@ export default function ColorToggleButton({
 
   const handleChange = async (event, newType) => {
     setType(newType);
-    console.log(type)
     const priorDate = getPriorDate(days);
     var dates = getDaysArray(priorDate, today);
     if (id2) {

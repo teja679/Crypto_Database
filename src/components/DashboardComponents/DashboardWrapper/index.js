@@ -7,12 +7,11 @@ import TabContext from "@mui/lab/TabContext";
 import Grid from "../Grid";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import List from "../List";
-import Search from "../Search";
-function DashboardWrapper({ data , searchHandler }) {
-  const [value, setValue] = React.useState(1);
+function DashboardWrapper({ data }) {
+  const [value, setValue] = React.useState(0);
 
   const style = {
-    color: "black",
+    color: "var(--white)",
     width: "50vw",
     fontSize: "1.2rem",
     fontWeight: 600,
@@ -27,47 +26,49 @@ function DashboardWrapper({ data , searchHandler }) {
   const theme = createTheme({
     palette: {
       primary: {
-        // Purple and green play nicely together.
         main: "#3a80e9",
       },
     },
   });
 
   return (
-          <div className="tabs-wrapper">
+    <div className="tabs-wrapper">
       <ThemeProvider theme={theme}>
         <TabContext value={value}>
-          <TabList className='tabs-div' 
+          <TabList
             variant="fullWidth"
             value={value}
             onChange={handleChange}
             textColor="primary"
           >
-          <Search handleChange={searchHandler} />
             <Tab label="Grid" sx={style} />
             <Tab label="List" sx={style} />
           </TabList>
-          <TabPanel value={1}>
+          <TabPanel value={0}>
             <div className="grid-flex">
               {data.length == 0 ? (
                 <p>No Crypto Currencies Found</p>
               ) : (
-                data.map((coin, i) => <Grid coin={coin} key={i} />)
+                data.map((coin, i) => (
+                  <Grid coin={coin} key={i} delay={(i + 5) % 5} />
+                ))
               )}
             </div>
           </TabPanel>
-          <TabPanel value={2}>
+          <TabPanel value={1}>
             <table className="list-table">
               {data.length == 0 ? (
                 <p>No Crypto Currencies Found</p>
               ) : (
-                data.map((coin, i) => <List coin={coin} key={i} />)
+                data.map((coin, i) => (
+                  <List coin={coin} key={i} delay={(i + 8) % 8} />
+                ))
               )}
             </table>
           </TabPanel>
         </TabContext>
       </ThemeProvider>
-    </div>   
+    </div>
   );
 }
 
